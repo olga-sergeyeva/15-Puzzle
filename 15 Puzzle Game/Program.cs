@@ -10,6 +10,10 @@ namespace _15_Puzzle_Game
     {
         static void Main(string[] args)
         {
+            int[] tiles = new int[] {3,1,5,2,6,7,8,4,0};
+
+            Game puzzle = new Game(tiles);
+            Console.ReadLine();
         }
     }
 }
