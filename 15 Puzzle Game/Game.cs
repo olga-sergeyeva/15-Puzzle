@@ -17,14 +17,14 @@ namespace _15_Puzzle_Game
 
         private int[,] FormGameField(int[] tiles)
         {
-            int width = (int)Math.Sqrt(tiles.Length);
-            int length = width;
+                int width = (int)Math.Sqrt(tiles.Length);
+                int length = width;
 
-            for (int i = 0; i < width; i++)
-                for (int j = 0; j < length; j++)
-                    GameField[i, j] = tiles[i];
+                for (int i = 0; i < width; i++)
+                    for (int j = 0; j < length; j++)
+                        GameField[i, j] = tiles[i];
 
-            return GameField;
+                return GameField;
         }
     }
 }
