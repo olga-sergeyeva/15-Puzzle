@@ -22,6 +22,7 @@ namespace _15_Puzzle_Game
             if (CheckTiles(Tiles) == true)
             {
                 Game puzzle = new Game(Tiles);
+                puzzle.GetLocation(5);
             }
 
             else Console.WriteLine("Из заданного массива невозможно сформировать квадратное поле");
