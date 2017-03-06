@@ -30,7 +30,6 @@ namespace _15_Puzzle_Game
                     n++;
                 }
             }
- 
             return GameField;
         }
 
@@ -38,6 +37,20 @@ namespace _15_Puzzle_Game
         {
             get { return GameField[x, y]; }
             set { GameField[x, y] = value; }
+        }
+
+        public void GetLocation(int value)
+        {
+            for (int i = 0; i < GameField.GetLength(0); i++)
+            {
+                for (int j = 0; j < GameField.GetLength(1); j++)
+                {
+                    if (value == GameField[i,j])
+                    {
+                        Console.WriteLine("Элемент {0} находится в ячейке [{1}, {2}]", value, i, j);
+                    }
+                }
+            }
         }
     }
 }
