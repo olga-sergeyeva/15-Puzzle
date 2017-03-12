@@ -44,24 +44,23 @@ namespace _15_Puzzle_Game
             throw new Exception("Ошибка: значение отсутсвует");
         }
 
-        //public void Shift(int value)
-        //{
-        //    int x = 0, y = 0;
-        //    x = Convert.ToInt32(coordinates.Substring(0, 1));
-        //    y = Convert.ToInt32(coordinates.Substring(1, 1));
+        public void Shift(int value)
+        {
+            int x = GetLocation(value).Item1;
+            int y = GetLocation(value).Item2;
 
-        //    if (x - 1 != -1 & GameField[x - 1, y] == 0) //вверх
-        //        MoveTile(GameField[x, y], GameField[x - 1, y]);
+            if (x - 1 != -1 & GameField[x - 1, y] == 0) //вверх
+                MoveTile(GameField[x, y], GameField[x - 1, y]);
 
-        //    if (x + 1 != GameField.GetLength(0) & GameField[x + 1, y] == 0) //вниз
-        //        MoveTile(GameField[x, y], GameField[x + 1, y]);
+            if (x + 1 != GameField.GetLength(0) & GameField[x + 1, y] == 0) //вниз
+                MoveTile(GameField[x, y], GameField[x + 1, y]);
 
-        //    if (y + 1 != GameField.GetLength(0) & GameField[x, y + 1] == 0) //вправо
-        //        MoveTile(GameField[x, y], GameField[x, y + 1]);
+            if (y + 1 != GameField.GetLength(0) & GameField[x, y + 1] == 0) //вправо
+                MoveTile(GameField[x, y], GameField[x, y + 1]);
 
-        //    if (y - 1 != -1 & GameField[x, y - 1] == 0) //влево
-        //        MoveTile(GameField[x, y], GameField[x, y - 1]);
-        //}
+            if (y - 1 != -1 & GameField[x, y - 1] == 0) //влево
+                MoveTile(GameField[x, y], GameField[x, y - 1]);
+        }
 
         private void MoveTile(int a, int b)
         {
