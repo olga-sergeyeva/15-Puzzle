@@ -12,31 +12,26 @@ namespace _15_Puzzle_Game
 
         public Game(int[] tiles)
         {
-            GameField = FormGameField(tiles);
-        }
-
-        private int[,] FormGameField(int[] tiles)
-        {
-            int n = 0;
-            int width = (int)Math.Sqrt(tiles.Length);
-            int length = width;
-            GameField = new int[width, length];
-
-            for (int i = 0; i < width; i++)
+            if (Math.Sqrt(tiles.Length) - Math.Truncate(Math.Sqrt(tiles.Length)) == 0)
             {
-                for (int j = 0; j < length; j++)
-                {
-                    GameField[i, j] = tiles[n];
-                    n++;
-                }
+                int n = 0;
+                int side = (int)Math.Sqrt(tiles.Length);
+                GameField = new int[side, side];
+
+                for (int i = 0; i < side; i++)
+                    for (int j = 0; j < side; j++)
+                    {
+                        GameField[i, j] = tiles[n];
+                        n++;
+                    }
             }
-            return GameField;
+
+            else throw new Exception("Из заданных элементов невозможно сформировать квадратное поле");
         }
 
-        public int this[int x, int y]
+        private int this[int x, int y]
         {
             get { return GameField[x, y]; }
-            set { GameField[x, y] = value; }
         }
 
         public string GetLocation(int value)
