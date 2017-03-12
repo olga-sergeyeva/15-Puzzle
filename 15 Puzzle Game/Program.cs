@@ -13,6 +13,7 @@ namespace _15_Puzzle_Game
             int[] Tiles = new int[] { 3, 1, 5, 2, 6, 7, 8, 4, 0 };
             Game puzzle = new Game(Tiles);
 
+            //Console.WriteLine(puzzle.GetLocation(9));
             Console.ReadLine();
         }
     }
