@@ -52,21 +52,21 @@ namespace _15_Puzzle_Game
 
             for (int i = 0; i < tiles.Length; i++)
             {
-                if (tiles[i] == tiles.Length || tiles[i] > tiles.Length)
-                    throw new Exception("Ошибка: На поле имеются элементы, значения которых больше или равны длине стороны");
+                if (i + 1!= tiles.Length && tiles[i] == tiles[i + 1])
+                    throw new Exception("Ошибка: На поле имеются повторяющиеся ячейки");
             }
-
-            //for (int i = 0; i < tiles.Length; i++)
-            //{
-            //    if (tiles[i + 1] != tiles.Length && tiles[i] == tiles[i + 1])
-            //        throw new Exception("Ошибка: На поле имеются повторяющиеся ячейки");
-            //}
 
             for (int i = 0; i < tiles.Length; i++)
             {
                 if (!tiles.Contains(i))
                     throw new Exception("Ошибка: Поле заполнено неверными элементами");
             }
+
+            //for (int i = 0; i < tiles.Length; i++)
+            //{
+            //    if (tiles[i] == tiles.Length || tiles[i] > tiles.Length)
+            //        throw new Exception("Ошибка: На поле имеются элементы, значения которых больше или равны длине стороны");
+            //}
         }
 
         private int this[int x, int y]

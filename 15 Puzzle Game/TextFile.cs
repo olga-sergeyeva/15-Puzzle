@@ -21,8 +21,12 @@ namespace _15_Puzzle_Game
 
                 for (int i = 0; i < chars.Length; i++)
                 {
-                    tiles[i] = Convert.ToInt32(chars[n]);
-                    n++;
+                    if (chars[n] =="")
+                    {
+                        throw new Exception("Ошибка: пустая строка");
+                    }
+                        tiles[i] = Convert.ToInt32(chars[n]);
+                        n++;
                 }
 
                 Game puzzle = new Game(tiles);
