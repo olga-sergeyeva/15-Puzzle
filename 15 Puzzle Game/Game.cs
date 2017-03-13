@@ -48,40 +48,25 @@ namespace _15_Puzzle_Game
 
         public void Shift(int value)
         {
-            int x = GetLocation(value).Item1;
-            int y = GetLocation(value).Item2;
+            int x0 = GetLocation(0).Item1;
+            int y0 = GetLocation(0).Item2;
 
-            if (x - 1 != -1 && GameField[x - 1, y] == 0) //вверх
+            int xv = GetLocation(value).Item1;
+            int yv = GetLocation(value).Item2;
+
+            if (((xv - 1 == x0 || xv + 1 == x0) && yv == y0) || ((yv - 1 == y0 || yv + 1 == y0) && xv == x0))
             {
-                MoveTile(ref GameField[x, y], ref GameField[x - 1, y]);
+                MoveTile(ref GameField[x0, y0], ref GameField[xv, yv]);
                 Print.ShowGameCondition(GameField);
             }
 
-            if (y + 1 != GameField.GetLength(0) && GameField[x, y + 1] == 0) //вправо
-            {
-                MoveTile(ref GameField[x, y], ref GameField[x, y + 1]);
-                Print.ShowGameCondition(GameField);
-            }
+            else throw new Exception("Ошибка: Рядом нет пустой ячейки");
 
-            if (x + 1 != GameField.GetLength(0) && GameField[x + 1, y] == 0) //вниз
-            {
-                MoveTile(ref GameField[x, y], ref GameField[x + 1, y]);
-                Print.ShowGameCondition(GameField);
-            }
-
-            if (y - 1 != -1 && GameField[x, y - 1] == 0) //влево
-            {
-                MoveTile(ref GameField[x, y], ref GameField[x, y - 1]);
-                Print.ShowGameCondition(GameField);
-            }
-
-            //else throw new Exception("Ошибка: Рядом с элементом нет пустой ячейки");
         }
 
         private void MoveTile(ref int a, ref int b)
         {
-            int temp = 0;
-            temp = a;
+            int temp = a;
             a = b;
             b = temp;
         }

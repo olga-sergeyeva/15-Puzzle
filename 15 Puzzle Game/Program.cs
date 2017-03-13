@@ -17,7 +17,7 @@ namespace _15_Puzzle_Game
 
             int[] tiles = new int[9]{ 1, 5, 6, 4, 0, 2, 8, 7, 3 };
             Game puzzle = new Game(tiles);
-            puzzle.Shift();
+            puzzle.Shift(1);
             Console.ReadLine();
         }
     }
