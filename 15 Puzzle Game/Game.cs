@@ -24,6 +24,8 @@ namespace _15_Puzzle_Game
                         GameField[i, j] = tiles[n];
                         n++;
                     }
+
+                Print.ShowGameCondition(GameField);
             }
 
             else throw new Exception("Ошибка: из заданных элементов невозможно сформировать квадратное поле");
@@ -49,20 +51,34 @@ namespace _15_Puzzle_Game
             int x = GetLocation(value).Item1;
             int y = GetLocation(value).Item2;
 
-            if (x - 1 != -1 & GameField[x - 1, y] == 0) //вверх
-                MoveTile(GameField[x, y], GameField[x - 1, y]);
+            if (x - 1 != -1 && GameField[x - 1, y] == 0) //вверх
+            {
+                MoveTile(ref GameField[x, y], ref GameField[x - 1, y]);
+                Print.ShowGameCondition(GameField);
+            }
 
-            if (x + 1 != GameField.GetLength(0) & GameField[x + 1, y] == 0) //вниз
-                MoveTile(GameField[x, y], GameField[x + 1, y]);
+            if (y + 1 != GameField.GetLength(0) && GameField[x, y + 1] == 0) //вправо
+            {
+                MoveTile(ref GameField[x, y], ref GameField[x, y + 1]);
+                Print.ShowGameCondition(GameField);
+            }
 
-            if (y + 1 != GameField.GetLength(0) & GameField[x, y + 1] == 0) //вправо
-                MoveTile(GameField[x, y], GameField[x, y + 1]);
+            if (x + 1 != GameField.GetLength(0) && GameField[x + 1, y] == 0) //вниз
+            {
+                MoveTile(ref GameField[x, y], ref GameField[x + 1, y]);
+                Print.ShowGameCondition(GameField);
+            }
 
-            if (y - 1 != -1 & GameField[x, y - 1] == 0) //влево
-                MoveTile(GameField[x, y], GameField[x, y - 1]);
+            if (y - 1 != -1 && GameField[x, y - 1] == 0) //влево
+            {
+                MoveTile(ref GameField[x, y], ref GameField[x, y - 1]);
+                Print.ShowGameCondition(GameField);
+            }
+
+            //else throw new Exception("Ошибка: Рядом с элементом нет пустой ячейки");
         }
 
-        private void MoveTile(int a, int b)
+        private void MoveTile(ref int a, ref int b)
         {
             int temp = 0;
             temp = a;
