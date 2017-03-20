@@ -82,7 +82,7 @@ namespace _15_Puzzle_Game
             throw new Exception("Ошибка: значение отсутсвует");
         }
 
-        public void Shift(int value)
+        public virtual void Shift(int value)
         {
             int x0 = GetLocation(0).Item1;
             int y0 = GetLocation(0).Item2;
