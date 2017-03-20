@@ -8,7 +8,7 @@ namespace _15_Puzzle_Game
 {
     class Game
     {
-        private int[,] GameField;
+        protected int[,] GameField;
 
         public Game(int[] tiles)
         {
@@ -25,8 +25,6 @@ namespace _15_Puzzle_Game
                         GameField[i, j] = tiles[n];
                         n++;
                     }
-
-                Print.ShowGameCondition(GameField);
             }
 
             else throw new Exception("Ошибка: из заданных элементов невозможно сформировать квадратное поле");
@@ -69,7 +67,7 @@ namespace _15_Puzzle_Game
             //}
         }
 
-        private int this[int x, int y]
+        public int this[int x, int y]
         {
             get { return GameField[x, y]; }
         }
@@ -95,14 +93,13 @@ namespace _15_Puzzle_Game
             if (((xv - 1 == x0 || xv + 1 == x0) && yv == y0) || ((yv - 1 == y0 || yv + 1 == y0) && xv == x0))
             {
                 MoveTile(ref GameField[x0, y0], ref GameField[xv, yv]);
-                Print.ShowGameCondition(GameField);
             }
 
             else throw new Exception("Ошибка: Рядом нет пустой ячейки");
 
         }
 
-        private void MoveTile(ref int a, ref int b)
+        protected void MoveTile(ref int a, ref int b)
         {
             int temp = a;
             a = b;

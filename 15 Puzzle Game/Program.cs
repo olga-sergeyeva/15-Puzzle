@@ -16,7 +16,8 @@ namespace _15_Puzzle_Game
             //TextFile.TextToGame(path);
 
             int[] tiles = new int[9]{ 1, 5, 6, 4, 0, 2, 7, 8, 3 };
-            Game puzzle = new Game(tiles);
+            Game2 puzzle = new Game2(tiles);
+            //puzzle.Randomize();
             //puzzle.Shift(1);
             //puzzle.GetLocation(8);
             Console.ReadLine();
