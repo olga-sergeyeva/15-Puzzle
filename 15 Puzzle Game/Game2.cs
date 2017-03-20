@@ -10,7 +10,7 @@ namespace _15_Puzzle_Game
     {
         public Game2(int[] tiles) : base(tiles) { Print.ShowGameCondition(GameField); }
 
-        public void Randomize()
+        public virtual void Randomize()
         {
             Random Generator = new Random();
             for (int i = GameField.Length ; i >= 0; i--)
