@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace _15_Puzzle_Game
 {
-    class Game3
+    class Game3 : Game
     {
+        public Game3(int[] tiles) : base(tiles) { }
+
     }
 }
