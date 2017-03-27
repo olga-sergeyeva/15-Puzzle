@@ -59,12 +59,6 @@ namespace _15_Puzzle_Game
                 if (!tiles.Contains(i))
                     throw new Exception("Ошибка: Поле заполнено неверными элементами");
             }
-
-            //for (int i = 0; i < tiles.Length; i++)
-            //{
-            //    if (tiles[i] == tiles.Length || tiles[i] > tiles.Length)
-            //        throw new Exception("Ошибка: На поле имеются элементы, значения которых больше или равны длине стороны");
-            //}
         }
 
         public int this[int x, int y]

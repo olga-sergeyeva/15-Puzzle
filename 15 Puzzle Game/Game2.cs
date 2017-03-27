@@ -8,7 +8,7 @@ namespace _15_Puzzle_Game
 {
     class Game2 : Game
     {
-        public Game2(int[] tiles) : base(tiles) { Print.ShowGameCondition(GameField); }
+        public Game2(int[] tiles) : base(tiles) { }
 
         public virtual void Randomize()
         {
@@ -22,36 +22,31 @@ namespace _15_Puzzle_Game
 
                 MoveTile(ref GameField[x1, y1], ref GameField[x2, y2]);
             }
-
-            Print.ShowGameCondition(GameField);
         }
 
-        //public bool CanBeFinished()
-        //{
-        //    int CountDisorders = 0;
-        //    int n = 0;
-        //    int[] tiles = new int[GameField.Length];
-        //    for (int i = 0; i < GameField.GetLength(0); i++)
-        //    {
-        //        for (int j = 0; j < GameField.GetLength(1); j++)
-        //            tiles[n] = GameField[i, j];
-        //        n++;
-        //    }
+        public override void Shift(int value)
+        {
+            base.Shift(value);
+        }
 
-        //    for (int i = 0; i < tiles.Length; i++)
-        //    {
+        public bool IsFinished()
+        {
+            int[] RightOrderofTiles = new int[GameField.Length];
+            for (int i = 0; i < RightOrderofTiles.Length; i++)
+                    RightOrderofTiles[i] = i;
 
-        //        while((tiles[i] > tiles[i + 1]) & (i + 1) != tiles.Length)
-        //        {
-        //            CountDisorders++;
-        //            i++;
-        //        }
-        //    }
+            int count = 0;
+            for (int i = 0; i < GameField.GetLength(0); i++)
+            {
+                for (int j = 0; j < GameField.GetLength(1); j++)
+                {
+                    if (GameField[i, j] != RightOrderofTiles[count])
+                        return false;
 
-        //    if (CountDisorders % 2 == 0)
-        //        return true;
-        //    else return false;
-
-        //}
+                    count++;
+                }
+            }
+            return true;
+        }
     }
 }
