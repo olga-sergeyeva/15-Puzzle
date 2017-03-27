@@ -12,7 +12,7 @@ namespace _15_Puzzle_Game
 
         public Game3(int[] tiles) : base(tiles)
         {
-            this.History = new List<int>();
+            History = new List<int>();
         }
 
         public override void Randomize()

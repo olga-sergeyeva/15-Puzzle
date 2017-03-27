@@ -9,6 +9,7 @@ namespace _15_Puzzle_Game
     class Game
     {
         protected int[,] gameField;
+
         public int[,] GameField { get { return GameField; } }
 
         public Game(int[] tiles)
@@ -74,7 +75,7 @@ namespace _15_Puzzle_Game
                     if (gameField[i, j] == value)
                         return new Tuple<int, int>(i, j);
 
-            throw new Exception("Ошибка: значение отсутсвует");
+            throw new Exception("Ошибка: указанное значение отсутсвует");
         }
 
         public virtual void Shift(int value)

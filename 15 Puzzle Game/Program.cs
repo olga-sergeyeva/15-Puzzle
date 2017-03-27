@@ -11,6 +11,9 @@ namespace _15_Puzzle_Game
     {
         static void Main(string[] args)
         {
+//            три примера, первый просто подвигать
+//второй считать из файла и довести до выйгрыша
+//и третий с историей поиграться
             string path = "C:\\Users\\user\\Desktop\\1.txt";
 
             Game puzzle1 = new Game(TextFile.TextToGame(path));
