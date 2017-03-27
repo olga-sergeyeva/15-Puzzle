@@ -11,12 +11,12 @@ namespace _15_Puzzle_Game
     {
         static void Main(string[] args)
         {
-            //string path = "C:\\Users\\user\\Desktop\\1.txt";
-            //string path = null;
-            //TextFile.TextToGame(path);
+            string path = "C:\\Users\\user\\Desktop\\1.txt";
 
-            int[] tiles = new int[9]{ 1, 5, 6, 4, 0, 2, 7, 8, 3 };
-            Game2 puzzle = new Game2(tiles);
+            Game puzzle1 = new Game(TextFile.TextToGame(path));
+            Print.ShowGameCondition(puzzle1);
+            //int[] tiles = new int[9]{ 1, 5, 6, 4, 0, 2, 7, 8, 3 };
+            //Game2 puzzle = new Game2(tiles);
             //puzzle.Randomize();
             //puzzle.Shift(1);
             //puzzle.GetLocation(8);

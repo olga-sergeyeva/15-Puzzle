@@ -9,7 +9,7 @@ namespace _15_Puzzle_Game
 {
     class TextFile
     {
-        public static void TextToGame(string path)
+        public static int[] TextToGame(string path)
         {
             if (path != null)
             {
@@ -21,17 +21,14 @@ namespace _15_Puzzle_Game
 
                 for (int i = 0; i < chars.Length; i++)
                 {
-                    if (chars[n] =="")
-                    {
+                    if (chars[n] == "")
                         throw new Exception("Ошибка: пустая строка");
-                    }
-                        tiles[i] = Convert.ToInt32(chars[n]);
-                        n++;
+
+                    tiles[i] = Convert.ToInt32(chars[n]);
+                    n++;
                 }
-
-                Game puzzle = new Game(tiles);
+                return tiles;
             }
-
             else throw new NullReferenceException("Ошибка: ссылка на расположение файла отсутствует");
         }
     }

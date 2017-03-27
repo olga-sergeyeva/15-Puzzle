@@ -9,6 +9,7 @@ namespace _15_Puzzle_Game
     class Game
     {
         protected int[,] GameField;
+        public int[,] gameField { get { return GameField; } }
 
         public Game(int[] tiles)
         {

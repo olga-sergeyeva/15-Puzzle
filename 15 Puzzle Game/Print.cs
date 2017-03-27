@@ -8,12 +8,12 @@ namespace _15_Puzzle_Game
 {
     class Print
     {
-        public static void ShowGameCondition(int[,] tiles)
+        public static void ShowGameCondition(Game puzzle)
         {
-            for (int i = 0; i < tiles.GetLength(0); i++)
+            for (int i = 0; i < puzzle.gameField.GetLength(0); i++)
             {
-                for (int j = 0; j < tiles.GetLength(1); j++)
-                    Console.Write(tiles[i, j]);
+                for (int j = 0; j < puzzle.gameField.GetLength(1); j++)
+                    Console.Write(puzzle.gameField[i, j]);
                 Console.WriteLine();
             }
         }
