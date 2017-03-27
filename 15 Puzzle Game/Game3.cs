@@ -8,20 +8,34 @@ namespace _15_Puzzle_Game
 {
     class Game3 : Game2
     {
-        public Game3(int[] tiles) : base(tiles) { }
+        public readonly List<int> History;
 
-        public List<int> History;
+        public Game3(int[] tiles) : base(tiles)
+        {
+            this.History = new List<int>();
+        }
 
         public override void Randomize()
         {
             base.Randomize();
-            History.Clear();
+            if (History != null)
+                History.Clear();
         }
 
         public override void Shift(int value)
         {
             base.Shift(value);
             History.Add(value);
+        }
+
+        public void Undo()
+        {
+            if (History.Count - 1 != - 1)
+            {
+                int LastTile = History[History.Count - 1];
+                History.RemoveAt(History.Count - 1);
+                Shift(LastTile);
+            }
         }
     }
 }
