@@ -8,8 +8,8 @@ namespace _15_Puzzle_Game
 {
     class Game
     {
-        protected int[,] GameField;
-        public int[,] gameField { get { return GameField; } }
+        protected int[,] gameField;
+        public int[,] GameField { get { return GameField; } }
 
         public Game(int[] tiles)
         {
@@ -18,12 +18,12 @@ namespace _15_Puzzle_Game
             {
                 int n = 0;
                 int side = (int)Math.Sqrt(tiles.Length);
-                GameField = new int[side, side];
+                gameField = new int[side, side];
 
                 for (int i = 0; i < side; i++)
                     for (int j = 0; j < side; j++)
                     {
-                        GameField[i, j] = tiles[n];
+                        gameField[i, j] = tiles[n];
                         n++;
                     }
             }
@@ -64,14 +64,14 @@ namespace _15_Puzzle_Game
 
         public int this[int x, int y]
         {
-            get { return GameField[x, y]; }
+            get { return gameField[x, y]; }
         }
 
         public Tuple<int, int> GetLocation(int value)
         {
-            for (int i = 0; i < GameField.GetLength(0); i++)
-                for (int j = 0; j < GameField.GetLength(1); j++)
-                    if (GameField[i, j] == value)
+            for (int i = 0; i < gameField.GetLength(0); i++)
+                for (int j = 0; j < gameField.GetLength(1); j++)
+                    if (gameField[i, j] == value)
                         return new Tuple<int, int>(i, j);
 
             throw new Exception("Ошибка: значение отсутсвует");
@@ -87,7 +87,7 @@ namespace _15_Puzzle_Game
 
             if (((xv - 1 == x0 || xv + 1 == x0) && yv == y0) || ((yv - 1 == y0 || yv + 1 == y0) && xv == x0))
             {
-                MoveTile(ref GameField[x0, y0], ref GameField[xv, yv]);
+                MoveTile(ref gameField[x0, y0], ref gameField[xv, yv]);
             }
 
             else throw new Exception("Ошибка: Рядом нет пустой ячейки");
