@@ -17,22 +17,25 @@ namespace _15_Puzzle_Game
             Check(tiles);
             if (Math.Sqrt(tiles.Length) - Math.Truncate(Math.Sqrt(tiles.Length)) == 0)
             {
-                int n = 0;
                 int side = (int)Math.Sqrt(tiles.Length);
                 gameField = new int[side, side];
-
-                for (int i = 0; i < side; i++)
-                    for (int j = 0; j < side; j++)
-                    {
-                        gameField[i, j] = tiles[n];
-                        n++;
-                    }
+                FillGameField(tiles, side); 
             }
-
             else throw new Exception("Ошибка: из заданных элементов невозможно сформировать квадратное поле");
         }
 
-        private void Check(int[] tiles)
+        private void FillGameField(int[] tiles, int side)
+        {
+            int n = 0;
+            for (int i = 0; i < side; i++)
+                for (int j = 0; j < side; j++)
+                {
+                    gameField[i, j] = tiles[n];
+                    n++;
+                }
+        }
+
+        public void Check(int[] tiles)
         {
             if (tiles.Length == 0)
             {

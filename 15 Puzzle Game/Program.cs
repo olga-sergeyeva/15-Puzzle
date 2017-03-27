@@ -25,11 +25,11 @@ namespace _15_Puzzle_Game
             puzzle0.Shift(7);
             Print.ShowGameCondition(puzzle0);
 
-            Console.WriteLine("Пятнашки 1");
-            Game puzzle1 = new Game(TextFile.TextToGame(path));
-            Print.ShowGameCondition(puzzle1);
-            puzzle1.Shift(3);
-            Print.ShowGameCondition(puzzle1);
+            //Console.WriteLine("Пятнашки 1");
+            //Game puzzle1 = new Game(TextFile.TextToGame(path));
+            //Print.ShowGameCondition(puzzle1);
+            //puzzle1.Shift(3);
+            //Print.ShowGameCondition(puzzle1);
 
             Console.WriteLine("Пятнашки 2");
             Game3 puzzle2 = new Game3(tiles);
