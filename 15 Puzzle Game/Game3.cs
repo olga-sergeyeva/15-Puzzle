@@ -8,8 +8,8 @@ namespace _15_Puzzle_Game
 {
     class Game3 : Game2
     {
-        public readonly List<int> History;
-
+        private List<int> History;
+        public List<int> history { get { return History; } }
         public Game3(int[] tiles) : base(tiles)
         {
             History = new List<int>();
