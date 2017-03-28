@@ -39,21 +39,21 @@ namespace _15_Puzzle_Game
             Print.ShowGameCondition(puzzle2);
             puzzle2.Shift(7);
             Print.ShowGameCondition(puzzle2);
-            foreach (int element in puzzle2.History)
+            foreach (int element in puzzle2.history)
             {
                 Console.WriteLine(element);
             }
             Console.WriteLine("Отменяем действие в пятнашках 2");
             puzzle2.Undo();
             Print.ShowGameCondition(puzzle2);
-            foreach (int element in puzzle2.History)
+            foreach (int element in puzzle2.history)
             {
                 Console.WriteLine(element);
             }
             Console.WriteLine("Перемешиваем плитки в пятнашках 2");
             puzzle2.Randomize();
             Print.ShowGameCondition(puzzle2);
-            foreach (int element in puzzle2.History)
+            foreach (int element in puzzle2.history)
             {
                 Console.WriteLine(element);
             }
