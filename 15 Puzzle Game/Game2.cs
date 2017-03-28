@@ -8,7 +8,7 @@ namespace _15_Puzzle_Game
 {
     class Game2 : Game
     {
-        public Game2(int[] tiles) : base(tiles) { }
+        public Game2(int[] tiles) : base(tiles) { Randomize(); }
 
         public virtual void Randomize()
         {
